@@ -19,6 +19,19 @@ class MainCoordinator: Coordinator {
     
     func start() {
         let vc = MainViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func moveToBuyViewController() {
+        let vc = BuyViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func moveToCreateAccountController() {
+        let vc = CreateAccountViewController.instantiate()
+        vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
     
